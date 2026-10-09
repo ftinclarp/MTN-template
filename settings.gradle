@@ -11,3 +11,17 @@ pluginManagement {
 
 // Should match your modid
 rootProject.name = 'modid'
+
+// Per-machine overrides (e.g. org.gradle.java.home): place them in the
+// git-ignored gradle-local.properties and they are applied as system
+// properties; nothing machine-specific is ever committed.
+def localGradleProps = file('gradle-local.properties')
+if (localGradleProps.isFile()) {
+	Properties localProps = new Properties()
+	localGradleProps.withInputStream { localProps.load(it) }
+	localProps.each { key, value ->
+		if (key.startsWith('org.gradle.')) {
+			System.setProperty(key, value)
+		}
+	}
+}

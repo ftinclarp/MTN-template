@@ -5,6 +5,10 @@ build/
 out/
 classes/
 
+# local per-machine overrides
+
+gradle-local.properties
+
 # eclipse
 
 *.launch
