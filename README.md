@@ -7,3 +7,7 @@ Derived from FabricMC/fabric-example-mod (branch 1.21.1). Cleaned:
 source-set split removed from build.gradle.
 
 Referenced by tag, not branch head, so porting is reproducible.
+
+## License
+
+MIT. See [LICENSE](LICENSE).
